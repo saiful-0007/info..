@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Website</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 15px 0;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      background-color: #444;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 80vh;
+    }
+
+    img {
+      width: 300px;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    /* Animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    main.animated {
+      animation: fadeIn 2s;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- <header>
+    <h1>Saiful Name Logo</h1>
+  </header> -->
+
+  <nav>
+        <!-- <h1 class="color:white">Saiful Univerce</h1> -->
+
+    <!-- <a href="">Saiful Univerce</a> -->
+    <a href="#home">Home</a>
+    <a href="#about">About Us</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact Me</a>
+  </nav>
+
+  <main id="home" class="animated">
+    <h2>Welcome to our website!</h2>
+    <img src="your-image.jpg" alt="Your Image">
+  </main>
+
+  <main id="about" style="display: none;">
+    <h2>About Us</h2>
+    <p>Add your about us content here.</p>
+  </main>
+
+  <main id="services" style="display: none;">
+    <h2>Services</h2>
+    <p>Add your services content here.</p>
+  </main>
+
+  <main id="contact" style="display: none;">
+    <h2>Contact Me</h2>
+    <p>Add your contact form or information here.</p>
+  </main>
+
+  <script>
+    // JavaScript to handle page navigation
+    const mainElements = document.querySelectorAll('main');
+    const navLinks = document.querySelectorAll('nav a');
+
+    navLinks.forEach((link, index) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        mainElements.forEach((main) => {
+          main.style.display = 'none';
+        });
+        mainElements[index].style.display = 'flex';
+        mainElements[index].classList.add('animated');
+      });
+    });
+  </script>
+
+</body>
+</html>
